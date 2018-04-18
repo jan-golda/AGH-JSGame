@@ -1,0 +1,27 @@
+{
+  "name": "AGH-JSGame",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simgple browser game created on JavaScript labs on AGH University of science and technology",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regzand/AGH-JSGame.git"
+  },
+  "author": "Jan 'Regzand' Gołda <jan.golda@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/regzand/AGH-JSGame/issues"
+  },
+  "homepage": "https://github.com/regzand/AGH-JSGame#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "normalize-scss": "^7.0.1",
+    "sass-material-colors": "0.0.5",
+    "sass-module-importer": "^1.4.0",
+    "scss-material-shadows": "git+https://github.com/prestopasto/SCSS-Material-Shadows.git"
+  }
+}
