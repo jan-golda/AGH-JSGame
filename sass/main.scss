@@ -1,0 +1,139 @@
+// normalize
+@import "normalize-scss";
+@include normalize();
+
+// imports
+@import "sass-material-colors/sass/_sass-material-colors.scss";
+@import "scss-material-shadows/src/md-material-shadows.scss";
+
+// settings
+$background-color:  material-color('grey', '200');
+$card-color:        material-color('grey', '50');
+$main-color:        material-color('red', '400');
+$font-color:        material-color('grey', '900');
+
+$panel-width: 200px;
+$panel-transition-time: 1s;
+
+
+
+// =====================================================================================================================
+//  GENERAL STYLES
+// =====================================================================================================================
+%grade-icon {
+  &:after{
+    content: "grade";
+    font-family: 'Material Icons';
+    margin-left: 3px;
+    vertical-align: -1px;
+    display: inline-block;
+    font-size: 90%;
+  }
+}
+
+%timerlapse-icon {
+  &:after{
+    content: "timelapse";
+    font-family: 'Material Icons';
+    margin-left: 3px;
+    vertical-align: -1px;
+    display: inline-block;
+    font-size: 90%;
+  }
+}
+
+.card {
+  @include mdElevation(8);
+  overflow: hidden;
+  background-color: $card-color;
+  border-radius: 2px;
+
+  .row {
+    display: flow-root;
+    padding: 16px;
+    border-bottom: 1px solid material-color('grey', '200');
+
+    &.header{
+      @include mdElevation(4);
+
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      background-color: $main-color;
+      color: $card-color;
+    }
+  }
+}
+
+.button {
+  @include mdElevation(4);
+
+  cursor: pointer;
+  display: block;
+  line-height: 36px;
+  height: 36px;
+  margin: 6px;
+  padding: 0 16px;
+  text-align: center;
+  background-color: $main-color;
+  color: $card-color;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+
+// =====================================================================================================================
+//  MAIN STYLES
+// =====================================================================================================================
+body {
+  background-color: $background-color;
+  font-family: 'Roboto', sans-serif;
+  color: $font-color;
+  font-size: 14px;
+}
+
+// panel
+#panel {
+  width: $panel-width;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  transition: top, left, margin;
+  transition-duration: $panel-transition-time;
+
+  &.open{
+    top: 25%;
+    left: 50%;
+    margin-left: -$panel-width/2;
+
+  }
+}
+
+#timer {
+  float: left;
+  @extend %timerlapse-icon
+}
+
+#score {
+  float: right;
+  @extend %grade-icon;
+}
+
+#scoreboard {
+
+  .number {
+    float: left;
+    color: material-color('grey', '400');
+  }
+  .name {
+    float: left;
+    margin-left: 5px;
+  }
+  .score {
+    float: right;
+    @extend %grade-icon;
+  }
+}
