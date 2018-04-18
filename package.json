@@ -23,5 +23,8 @@
     "sass-material-colors": "0.0.5",
     "sass-module-importer": "^1.4.0",
     "scss-material-shadows": "git+https://github.com/prestopasto/SCSS-Material-Shadows.git"
+  },
+  "dependencies": {
+    "PhysicsJS": "git+https://github.com/wellcaffeinated/PhysicsJS.git"
   }
 }
