@@ -1,4 +1,4 @@
-const settings = {
+const Settings = {
     game: {
         stageTime: 60*1000,
         stagesCount: 3
