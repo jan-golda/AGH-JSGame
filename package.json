@@ -25,6 +25,6 @@
     "scss-material-shadows": "git+https://github.com/prestopasto/SCSS-Material-Shadows.git"
   },
   "dependencies": {
-    "PhysicsJS": "git+https://github.com/wellcaffeinated/PhysicsJS.git"
+    "matter-js": "^0.14.1"
   }
 }
