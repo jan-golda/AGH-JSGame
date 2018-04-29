@@ -7,10 +7,11 @@
 
 class Game{
 
-    constructor(playerName){
+    constructor(gameEngine, playerName){
         this.score = 0;
         this.playerName = playerName;
         this.state = 0;
+        this.gameEngine = gameEngine;
     }
 
     startGame(){
@@ -20,11 +21,52 @@ class Game{
         // hide panel
         Panel.close();
 
+        // prepare board
+        this.gameEngine.clear();
+        this._spawnPlayer();
+
+        // setup keyboard handler
+        this._setupKeyboard();
+
         // start game loop
         window.requestAnimationFrame(this.gameLoop.bind(this));
 
         // logging
         console.log("Game started");
+    }
+
+    _spawnPlayer(){
+        this.player = Matter.Bodies.circle(
+            this.gameEngine.getWidth()/2,
+            this.gameEngine.getHeight()/2,
+            Settings.player.radius
+        );
+        this.gameEngine.add(this.player);
+    }
+
+    _movePlayer(vec){
+        Matter.Body.applyForce(this.player, this.player.position, vec);
+    }
+
+    _setupKeyboard(){
+        document.addEventListener("keydown", this._onKeyDown.bind(this));
+    }
+
+    _onKeyDown(event){
+        switch (event.key){
+            case "ArrowUp":
+                this._movePlayer(Matter.Vector.create(0, -1));
+                break;
+            case "ArrowRight":
+                this._movePlayer(Matter.Vector.create(1, 0));
+                break;
+            case "ArrowDown":
+                this._movePlayer(Matter.Vector.create(0, 1));
+                break;
+            case "ArrowLeft":
+                this._movePlayer(Matter.Vector.create(-1, 0));
+                break;
+        }
     }
 
     endGame(){
