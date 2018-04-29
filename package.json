@@ -25,6 +25,7 @@
     "scss-material-shadows": "git+https://github.com/prestopasto/SCSS-Material-Shadows.git"
   },
   "dependencies": {
+    "matter-collision-events": "^0.1.7",
     "matter-js": "^0.14.1"
   }
 }
