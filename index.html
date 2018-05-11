@@ -30,7 +30,10 @@
             <a id="new-game" class="button">New game</a>
         </nav>
 
+        <script src="js/lib/colorInterpolation.js"></script>
         <script src="node_modules/matter-js/build/matter.min.js"></script>
+        <script src="node_modules/matter-collision-events/build/matter-collision-events.min.js"></script>
+        <script>Matter.use('matter-collision-events');</script>
         <script src="js/Settings.js"></script>
         <script src="js/Panel.js"></script>
         <script src="js/Game.js"></script>

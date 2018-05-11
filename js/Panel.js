@@ -71,7 +71,7 @@ const Panel = (function Panel(){
     }
 
     function formatTime(ms){
-        return Math.floor(ms/1000/60) + ":" + (ms/1000 < 10 ? '0' : '') + Math.floor(ms/1000%60);
+        return Math.floor(ms/1000/60) + ":" + (ms/1000%60 < 10 ? '0' : '') + Math.floor(ms/1000%60);
     }
 
     return {

@@ -18,6 +18,7 @@ class GameEngine{
         this.engine = Matter.Engine.create({
             world: this.world
         });
+        Matter.Engine.run(this.engine);
     }
 
     _setupRenderer(){

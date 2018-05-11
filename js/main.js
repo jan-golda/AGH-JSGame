@@ -1,3 +1,7 @@
+function random(from, to) {
+    return Math.floor(Math.random() * to) + from;
+}
+
 const gameEngine = new GameEngine();
 let game;
 
